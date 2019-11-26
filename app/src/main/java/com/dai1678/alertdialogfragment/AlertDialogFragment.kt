@@ -11,7 +11,7 @@ import androidx.fragment.app.DialogFragment
 /**
  * メッセージダイアログ
  */
-open class AlertDialogFragment : DialogFragment() {
+class AlertDialogFragment : DialogFragment() {
     private var mTitle: String? = null
     private var mMessage: String? = null
     private var mPositiveButtonTitle: String? = null
