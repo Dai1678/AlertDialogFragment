@@ -64,15 +64,19 @@ open class AlertDialogFragment : DialogFragment() {
         } ?: throw IllegalAccessError("Activity cannot be null")
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.run {
-            putString(KEY_TITLE, mTitle)
-            putString(KEY_MESSAGE, mMessage)
-            putString(KEY_POSITIVE_BUTTON_TITLE, mPositiveButtonTitle)
-            putString(KEY_NEGATIVE_BUTTON_TITLE, mNegativeButtonTitle)
-        }
-    }
+    /**
+     * Fragmentの中で発生したデータやViewへの入力情報を保持するときは
+     * ↓のようにonSaveInstanceStateを使う
+     */
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        super.onSaveInstanceState(outState)
+//        outState.run {
+//            putString(KEY_TITLE, mTitle)
+//            putString(KEY_MESSAGE, mMessage)
+//            putString(KEY_POSITIVE_BUTTON_TITLE, mPositiveButtonTitle)
+//            putString(KEY_NEGATIVE_BUTTON_TITLE, mNegativeButtonTitle)
+//        }
+//    }
 
     companion object {
         const val DIALOG_REQUEST_CODE = 0
