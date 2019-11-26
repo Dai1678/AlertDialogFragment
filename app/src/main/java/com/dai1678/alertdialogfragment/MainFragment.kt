@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.dai1678.alertdialogfragment.AlertDialogFragment.*
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class MainFragment : Fragment(), AlertDialogFragment.AlertDialogFragmentListener {
+class MainFragment : Fragment(), AlertDialogFragmentListener {
 
     override fun onCreateView(
         inflater: LayoutInflater,
