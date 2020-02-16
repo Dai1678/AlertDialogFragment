@@ -2,4 +2,11 @@
     <string name="app_name">AlertDialogFragment</string>
     <string name="show_dialog_label">ダイアログ表示</string>
     <string name="start_second_activity_label">アクティビティへ</string>
+    <string name="ok">OK</string>
+    <string name="blank"> </string>
+
+    <string name="sample_dialog_title">タイトル</string>
+    <string name="sample_dialog_message">メッセージ</string>
+    <string name="sample_dialog_positive_message">はい</string>
+    <string name="sample_dialog_negative_message">キャンセル</string>
 </resources>

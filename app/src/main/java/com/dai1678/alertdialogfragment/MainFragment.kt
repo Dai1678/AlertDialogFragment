@@ -24,14 +24,13 @@ class MainFragment : Fragment(), AlertDialogFragmentListener {
         super.onViewCreated(view, savedInstanceState)
 
         show_dialog_button.setOnClickListener {
-            val dialog = AlertDialogFragment.newInstance(
-                title = "タイトル",
-                message = "メッセージ",
-                positiveTitle = "ポジティブ",
-                negativeTitle = "ネガティブ"
-            )
-            dialog.setTargetFragment(this, AlertDialogFragment.DIALOG_REQUEST_CODE)
-            dialog.show(requireFragmentManager(), AlertDialogFragment.DIALOG_TAG)
+            alertDialogFragment {
+                titleResId = R.string.sample_dialog_title
+                messageResId = R.string.sample_dialog_message
+                positiveTitleResId = R.string.sample_dialog_positive_message
+                negativeTitleResId = R.string.sample_dialog_negative_message
+                cancelable = false
+            }.show(requireFragmentManager(), this)
         }
 
         start_second_activity_button.setOnClickListener {
@@ -41,10 +40,6 @@ class MainFragment : Fragment(), AlertDialogFragmentListener {
 
     override fun onPositiveClick(dialog: DialogInterface, which: Int) {
         Toast.makeText(context, "YES!!!", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onNegativeClick(dialog: DialogInterface, which: Int) {
-        dialog.dismiss()
     }
 
     companion object {

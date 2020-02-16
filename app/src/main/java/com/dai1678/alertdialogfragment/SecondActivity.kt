@@ -15,14 +15,10 @@ class SecondActivity : AppCompatActivity(), AlertDialogFragment.AlertDialogFragm
         setContentView(R.layout.activity_second)
 
         show_dialog_button.setOnClickListener {
-            val dialog = AlertDialogFragment.newInstance(
-                title = "タイトル2",
-                message = "メッセージ2",
-                positiveTitle = "ポジティブ2",
-                negativeTitle = "ネガティブ2"
-            )
-
-            dialog.show(supportFragmentManager, AlertDialogFragment.DIALOG_TAG)
+            alertDialogFragment {
+                titleResId = R.string.sample_dialog_title
+                messageResId = R.string.sample_dialog_message
+            }.show(supportFragmentManager)
         }
     }
 
@@ -34,9 +30,4 @@ class SecondActivity : AppCompatActivity(), AlertDialogFragment.AlertDialogFragm
     override fun onPositiveClick(dialog: DialogInterface, which: Int) {
         Toast.makeText(this, "YES!!!", Toast.LENGTH_SHORT).show()
     }
-
-    override fun onNegativeClick(dialog: DialogInterface, which: Int) {
-
-    }
-
 }
